@@ -1,0 +1,44 @@
+@(form: Form[Auth.Login])
+
+<html>
+<head>
+<title>DocBox - Sign in</title>
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("/public/img/favicon.png")">
+    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("css/login.css")">
+    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("css/bootstrap.min.css")">
+</head>
+<body>
+    <div class="container">
+        
+        <form method="POST" action="@routes.Auth.authenticate" class="form-signin">
+            <h2 class="form-signin-heading">Sign in</h2>
+            
+            @if(form.hasGlobalErrors) {
+                <p class="text-error">
+                    @form.globalError.message
+                </p>
+            }
+            @if(flash.contains("success")) {
+                <p class="text-success">
+                    @flash.get("success")
+                </p>
+            }
+            
+            <input id="username" name="username" type="text" class="form-control" placeholder="Username" required autofocus value="@form("username").value">
+            <input id="password" name="password" type="password" class="form-control" placeholder="Password" required>
+            
+            <label class="checkbox">
+                <input type="checkbox" value="remember-me">
+                Remember me </label>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                Sign in
+            </button>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="@routes.Assets.at("js/jquery-1.9.0.min.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("js/bootstrap.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("js/main.js")"></script>
+
+</body>
+</html>

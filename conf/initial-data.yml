@@ -1,0 +1,33 @@
+#Users
+users:
+    - !!models.User
+        id:         1
+        username:   user1
+        password:   password
+
+    - !!models.User
+        id:         2
+        username:   user2
+        password:   password
+
+#Customers
+customers:
+    - !!models.Customer
+        id:         1
+        name:       Customer 1
+
+    - !!models.Customer
+        id:         2
+        name:       Customer 2
+
+    - !!models.Customer
+        id:         3
+        name:       Customer 3
+
+    - !!models.Customer
+        id:         4
+        name:       Customer 4
+
+    - !!models.Customer
+        id:         5
+        name:       Customer 5
